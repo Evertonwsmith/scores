@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "562798342506",
+    "project_id": "scores2024",
+    "storage_bucket": "scores2024.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:562798342506:android:5dde130b788d65a9a3b513",
+        "android_client_info": {
+          "package_name": "com.example.scores"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyuQ21CGTpDZ58ArVY4Da7QT9MA_bZwZA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
