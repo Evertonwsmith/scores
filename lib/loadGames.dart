@@ -21,11 +21,7 @@ class _loadGamesState extends State<loadGames> {
     items.addAll(loadCurlingScores() as Iterable);
     }
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Saved Games"),
-          centerTitle: true,
-          backgroundColor: customStyles.appbarColor,
-        ),
+        appBar: customStyles.appBar("Previous Games"),
         body: ListView.builder(
           itemCount: items.length,
           itemBuilder: (BuildContext context, int index) {

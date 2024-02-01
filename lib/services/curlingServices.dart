@@ -13,7 +13,7 @@ class curlingServices {
             gamename: data['gamename'],
             team1name: data['team1name'],
             team2name: data['team2name'],
-            scores: data['scores'],
+            score: data['scores'],
             date: data['date']);
       }).toList();
     });

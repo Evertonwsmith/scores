@@ -1,5 +1,8 @@
+import 'dart:math';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:scores/curlingGame.dart';
 import 'package:scores/models/curlingModel.dart';
 import 'package:scores/styles.dart';
 
@@ -18,34 +21,26 @@ class _newCurlingGameState extends State<newCurlingGame> {
       gamename: '',
       team1name: '',
       team2name: '',
-      scores: [],
+      score: [],
       date: now.toString());
-  bool gnselected = false;
+  bool gnselected = true;
   bool tn1 = false;
   bool tn2 = false;
 
-  //
-  // void changeNewModel(curlingModel modelChanges) {
-  //   setState(() {
-  //     newModel = modelChanges;
-  //   });
-  // }
+  int randInt = Random().nextInt(100);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("New Curling Game"),
-          centerTitle: true,
-          backgroundColor: Colors.green[300],
-          elevation: 20,
-        ),
+        appBar: customStyles.appBar("NEW CURLING GAME"),
         body: SingleChildScrollView(
           child: Form(
               key: _formKey,
               child: Padding(
-                padding: const EdgeInsets.all(25.0),
+                padding: const EdgeInsets.all(8.0),
                 child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height * 0.85,
                   decoration: customStyles.getCustomBoxDec4(),
                   child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -55,7 +50,7 @@ class _newCurlingGameState extends State<newCurlingGame> {
                           child: AnimatedContainer(
                             width: gnselected ? 400 : 200,
                             duration: Duration(milliseconds: 500),
-                            decoration: customStyles.getCustomBoxDec(),
+                            decoration: customStyles.getCustomBoxDec3(),
                             child: Padding(
                               padding: const EdgeInsets.all(10.0),
                               child: TextFormField(
@@ -67,10 +62,13 @@ class _newCurlingGameState extends State<newCurlingGame> {
                                   });
                                 },
                                 decoration: InputDecoration(
+                                    border: InputBorder.none,
                                     labelText: "Game Name:",
                                     hintText: "Enter Game Name"),
                                 validator: (value) {
-                                  if (value == null || value.isEmpty) {
+                                  if (value == null ||
+                                      value.isEmpty ||
+                                      value == '') {
                                     return 'Please enter a value, nerd';
                                   }
                                   return null;
@@ -88,7 +86,7 @@ class _newCurlingGameState extends State<newCurlingGame> {
                           child: AnimatedContainer(
                             width: tn1 ? 400 : 200,
                             duration: Duration(milliseconds: 500),
-                            decoration: customStyles.getCustomBoxDec(),
+                            decoration: customStyles.getCustomBoxDec2(),
                             child: Padding(
                               padding: const EdgeInsets.all(10.0),
                               child: TextFormField(
@@ -100,10 +98,13 @@ class _newCurlingGameState extends State<newCurlingGame> {
                                   });
                                 },
                                 decoration: InputDecoration(
-                                    labelText: "Team 1 Name:",
+                                    border: InputBorder.none,
+                                    labelText: "Team Red Name:",
                                     hintText: "Enter Team 1 Name"),
                                 validator: (value) {
-                                  if (value == null || value.isEmpty) {
+                                  if (value == null ||
+                                      value.isEmpty ||
+                                      value == '') {
                                     return 'Please enter a team name, plz n thx';
                                   }
                                   return null;
@@ -133,10 +134,13 @@ class _newCurlingGameState extends State<newCurlingGame> {
                                   });
                                 },
                                 decoration: InputDecoration(
-                                    labelText: "Team 2 Name:",
+                                    border: InputBorder.none,
+                                    labelText: "Team Yellow Name:",
                                     hintText: "Enter Team 2 Name"),
                                 validator: (value) {
-                                  if (value == null || value.isEmpty) {
+                                  if (value == null ||
+                                      value.isEmpty ||
+                                      value == '') {
                                     return 'Please enter a team name?';
                                   }
                                   return null;
@@ -152,6 +156,7 @@ class _newCurlingGameState extends State<newCurlingGame> {
                         ElevatedButton(
                             child: Text('Submit'),
                             onPressed: () async {
+                              print('pressed');
                               if (_formKey.currentState!.validate()) {
                                 _formKey.currentState!.save();
                                 await FirebaseFirestore.instance
@@ -161,24 +166,15 @@ class _newCurlingGameState extends State<newCurlingGame> {
                                   'gamename': newModel.gamename,
                                   'team1name': newModel.team1name,
                                   'team2name': newModel.team2name,
-                                  'scores': [
-                                    0,
-                                    0,
-                                    0,
-                                    0,
-                                    0,
-                                    0,
-                                    0,
-                                    0,
-                                    0,
-                                    0,
-                                    0,
-                                    0
-                                  ],
-                                  'date': now.toString(),
+                                  'score': newModel.score,
+                                  'date': newModel.date,
                                 });
+                                print('saved');
+                                Navigator.pushReplacement(context,
+                                    MaterialPageRoute(builder: (context) {
+                                  return curlingGame(model: newModel);
+                                }));
                               }
-                              ;
                             }),
                       ]),
                 ),

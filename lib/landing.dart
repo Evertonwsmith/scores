@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
-import 'package:scores/curling.dart';
-import 'package:scores/loadGames.dart';
 import 'package:scores/newCurlingGame.dart';
 import 'package:scores/savedCurlingGames.dart';
+import 'package:scores/sportSel.dart';
 import 'package:scores/styles.dart';
 
 class landing extends StatelessWidget {
@@ -11,48 +10,64 @@ class landing extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String team1 ='1';
-    String team2 ='2';
+    String team1 = '1';
+    String team2 = '2';
     return Scaffold(
-        appBar: AppBar(
-          toolbarHeight: 80,
-          backgroundColor: customStyles.appbarColor,
-          title: Text('Title A',style: customStyles.mainTextStyleY(),),
-          centerTitle: true,
-          elevation: 5,
-        ),
-        body: Container(
-          decoration: customStyles.getCustomBoxDec4(),
-          child: Center(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => newCurlingGame()),
-                    );
-                  },
-                  child: Container(
-                      width: 100, height: 100,
-                      decoration: customStyles.appDecor(),
-                      child: Icon(LineIcons.rocket, size: 100,color: customStyles.y)),
-                ),
-                //////////////////////////////////
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => savedCurlingGames()),
-                    );
-                  },
-                  child: Container(
-                      width: 100, height: 100,
-                      decoration: customStyles.appDecor(),
-                      child: Icon(LineIcons.hamburger, size: 100,color: customStyles.y)),
-                ),
-              ],
+        appBar: customStyles.appBar("CURLING!"),
+        body: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            decoration: customStyles.getCustomBoxDec4(),
+            child: Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => newCurlingGame()),
+                      );
+                    },
+                    child: Container(
+                        width: 100,
+                        height: 100,
+                        decoration: customStyles.appDecor(),
+                        child: Icon(LineIcons.plusCircle,
+                            size: 100, color: customStyles.y)),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => savedCurlingGames()),
+                      );
+                    },
+                    child: Container(
+                        width: 100,
+                        height: 100,
+                        decoration: customStyles.appDecor(),
+                        child: Icon(LineIcons.infoCircle,
+                            size: 100, color: customStyles.y)),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => sportSel()),
+                      );
+                    },
+                    child: Container(
+                        width: 100,
+                        height: 100,
+                        decoration: customStyles.appDecor(),
+                        child: Icon(LineIcons.chevronCircleRight,
+                            size: 100, color: customStyles.y)),
+                  ),
+                ],
+              ),
             ),
           ),
         ));
