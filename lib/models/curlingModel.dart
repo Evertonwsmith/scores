@@ -1,9 +1,9 @@
 class curlingModel {
-  final String gamename;
-  final String team1name;
-  final String team2name;
-  List<int> scores;
-  final String date;
+  late String gamename;
+  late String team1name;
+  late String team2name;
+  late List<dynamic> scores;
+  late String date;
 
   curlingModel(
       {required this.gamename,

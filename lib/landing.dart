@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:scores/curling.dart';
 import 'package:scores/loadGames.dart';
+import 'package:scores/newCurlingGame.dart';
+import 'package:scores/savedCurlingGames.dart';
 import 'package:scores/styles.dart';
 
 class landing extends StatelessWidget {
@@ -29,7 +31,7 @@ class landing extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => curling(team1: team1,team2: team2)),
+                      MaterialPageRoute(builder: (context) => newCurlingGame()),
                     );
                   },
                   child: Container(
@@ -42,7 +44,7 @@ class landing extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => loadGames()),
+                      MaterialPageRoute(builder: (context) => savedCurlingGames()),
                     );
                   },
                   child: Container(

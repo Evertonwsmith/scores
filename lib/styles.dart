@@ -30,11 +30,22 @@ class customStyles {
   static BoxDecoration getCustomBoxDec(){
     return BoxDecoration(
       border: Border.all(
-        color: Colors.black,
-        width: 10,
+        color: Colors.yellow[700]!,
+        width: 5,
       ),
       borderRadius: BorderRadius.circular(20),
-      color: Colors.grey[300]!,
+      color: Colors.yellow[100]!,
+    );
+  }
+
+  static BoxDecoration getCustomBoxDecSel(){
+    return BoxDecoration(
+      border: Border.all(
+        color: Colors.yellow[700]!,
+        width: 5,
+      ),
+      borderRadius: BorderRadius.circular(20),
+      color: Colors.white,
     );
   }
 

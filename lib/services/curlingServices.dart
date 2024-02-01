@@ -3,7 +3,7 @@ import 'package:scores/models/curlingModel.dart';
 
 class curlingServices {
   final CollectionReference curlingCollection =
-      FirebaseFirestore.instance.collection('curling');
+      FirebaseFirestore.instance.collection('scores');
 
   Stream<List<curlingModel>> getCurlingGames() {
     return curlingCollection.snapshots().map((snapshot) {
