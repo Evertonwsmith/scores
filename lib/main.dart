@@ -2,7 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:scores/firebase_options.dart';
-import 'package:scores/landing.dart';
+import 'package:scores/Curling/curlingLanding.dart';
 import 'package:scores/services/curlingServices.dart';
 
 Future<void> main() async {

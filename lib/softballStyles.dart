@@ -37,7 +37,7 @@ class customStyles {
             )),
       ),
       centerTitle: true,
-      backgroundColor: Colors.blue[500],
+      backgroundColor: Colors.green[500],
       elevation: 20,
     );
   }
@@ -61,28 +61,28 @@ class customStyles {
   static BoxDecoration getStyledBoxDecoration(bool pressed) {
     return BoxDecoration(
       border: Border.all(
-        color: pressed ? Colors.red : Colors.blue,
+        color: pressed ? Colors.red : Colors.green,
       ),
       borderRadius: BorderRadius.circular(50),
-      color: pressed ? Colors.yellow : Colors.green,
+      color: pressed ? Colors.blue : Colors.green,
     );
   }
 
   static BoxDecoration getCustomBoxDec() {
     return BoxDecoration(
       border: Border.all(
-        color: Colors.yellow[700]!,
+        color: Colors.blue[700]!,
         width: 5,
       ),
       borderRadius: BorderRadius.circular(50),
-      color: Colors.yellow[50]!,
+      color: Colors.blue[50]!,
     );
   }
 
   static BoxDecoration getCustomBoxDecSel() {
     return BoxDecoration(
       border: Border.all(
-        color: Colors.yellow[700]!,
+        color: Colors.blue[700]!,
         width: 5,
       ),
       borderRadius: BorderRadius.circular(20),
@@ -104,7 +104,7 @@ class customStyles {
   static BoxDecoration getCustomBoxDec3() {
     return BoxDecoration(
       border: Border.all(
-        color: Colors.blue[700]!,
+        color: Colors.green[700]!,
         width: 10,
       ),
       borderRadius: BorderRadius.circular(50),
@@ -115,10 +115,10 @@ class customStyles {
   static BoxDecoration getCustomBoxDec4() {
     return BoxDecoration(
       border: Border.all(
-        color: Colors.blue[400]!,
+        color: Colors.green[400]!,
         width: 10,
       ),
-      color: Colors.blue[300]!,
+      color: Colors.green[300]!,
     );
   }
 
@@ -127,10 +127,10 @@ class customStyles {
       borderRadius: BorderRadius.only(
           topLeft: Radius.circular(20), bottomRight: Radius.circular(20)),
       border: Border.all(
-        color: Colors.blue[400]!,
+        color: Colors.green[400]!,
         width: 10,
       ),
-      color: Colors.blue[100]!,
+      color: Colors.green[100]!,
     );
   }
 
@@ -146,7 +146,7 @@ class customStyles {
 
   static TextStyle mainTextStyleY() {
     return TextStyle(
-      color: Colors.yellow[300],
+      color: Colors.blue[300],
       fontSize: 30,
       fontWeight: FontWeight.bold,
       letterSpacing: 2,
@@ -154,7 +154,7 @@ class customStyles {
     );
   }
 
-  static Color y = Colors.blue[800]!;
+  static Color y = Colors.green[800]!;
 
   static TextStyle pageTitleStyle = GoogleFonts.josefinSans(
       textStyle: TextStyle(
@@ -166,13 +166,26 @@ class customStyles {
   static BoxDecoration getCustomBoxDec6() {
     return BoxDecoration(
       border: Border.all(
-        color: Colors.blue[400]!,
+        color: Colors.green[400]!,
         width: 10,
       ),
       borderRadius: BorderRadius.all(
         Radius.circular(10),
       ),
-      color: Colors.blue[100]!,
+      color: Colors.green[100]!,
+    );
+  }
+
+  static getSoftballScoreBoxStyle() {
+    return BoxDecoration(
+      border: Border.all(
+        color: Colors.green[400]!,
+        width: 10,
+      ),
+      borderRadius: BorderRadius.all(
+        Radius.circular(10),
+      ),
+      color: Colors.green[100]!,
     );
   }
 }

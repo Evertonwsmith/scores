@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
-import 'package:scores/newCurlingGame.dart';
-import 'package:scores/savedCurlingGames.dart';
+import 'package:scores/Curling/newCurlingGame.dart';
+import 'package:scores/Curling/savedCurlingGames.dart';
 import 'package:scores/sportSel.dart';
 import 'package:scores/styles.dart';
 

@@ -5,6 +5,9 @@ class curlingModel {
   late List<dynamic> score;
   late String date;
 
+
+
+
   curlingModel(
       {required this.gamename,
       required this.team1name,

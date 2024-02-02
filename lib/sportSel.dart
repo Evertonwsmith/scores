@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:scores/landing.dart';
-import 'package:scores/newCurlingGame.dart';
+import 'package:scores/Curling/curlingLanding.dart';
+import 'package:scores/Curling/newCurlingGame.dart';
+import 'package:scores/Softball/softballGame.dart';
+import 'package:scores/models/softballModel.dart';
 import 'package:scores/styles.dart';
 
 class sportSel extends StatefulWidget {
@@ -11,6 +13,9 @@ class sportSel extends StatefulWidget {
 }
 
 class _sportSelState extends State<sportSel> {
+  softballModel empty = softballModel('gamename', 'hometeam', 'awayteam', [],
+      [], 0, 0, DateTime.now().toString());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +23,7 @@ class _sportSelState extends State<sportSel> {
       body: PageView(
         children: <Widget>[
           sport("Curling", landing()),
-          sport("Softball", landing()),
+          sport("Softball", softballGame(model: empty)),
           sport("Golf", landing()),
           sport("Hockey", landing())
         ],
@@ -54,7 +59,6 @@ class _sportSelState extends State<sportSel> {
                       });
                     },
                     child: Text(name, style: customStyles.pageTitleStyle))),
-
           ])),
     );
   }

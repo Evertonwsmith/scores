@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:scores/curlingGame.dart';
+import 'package:scores/Curling/curlingGame.dart';
 import 'package:scores/models/curlingModel.dart';
 import 'package:scores/styles.dart';
 
@@ -43,7 +43,7 @@ class _newCurlingGameState extends State<newCurlingGame> {
                   height: MediaQuery.of(context).size.height * 0.85,
                   decoration: customStyles.getCustomBoxDec4(),
                   child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: <Widget>[
                         Padding(
                           padding: const EdgeInsets.all(8.0),
