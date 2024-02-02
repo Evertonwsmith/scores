@@ -13,8 +13,8 @@ class sportSel extends StatefulWidget {
 }
 
 class _sportSelState extends State<sportSel> {
-  softballModel empty = softballModel('gamename', 'hometeam', 'awayteam', [],
-      [], 0, 0, DateTime.now().toString());
+  softballModel empty = softballModel('gamename', 'hometeam', 'awayteam', [0,0,0,0,0,0,0,0,0],
+      [0,0,0,0,0,0,0,0,0], 0, 0, DateTime.now().toString());
 
   @override
   Widget build(BuildContext context) {
